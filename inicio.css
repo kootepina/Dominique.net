@@ -1,0 +1,106 @@
+/* ===== PANTALLA DE INICIO (DOMINIQUE) ===== */
+
+.inicio-body {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+  padding: 40px 20px 60px;
+}
+
+/* Logo de marca: gato + texto, arriba, no clickeable */
+.inicio-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.inicio-logo img {
+  width: 110px;
+  height: auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+}
+
+.inicio-logo-texto {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.marca-nombre {
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #4a3b2a;
+  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.6);
+}
+
+.marca-sub {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #6b5640;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Contenedor de iconos: repartidos, envuelven en filas */
+.inicio-iconos {
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px 60px;
+  margin-top: 10px;
+}
+
+/* Cada icono clickeable: figura + nombre */
+.inicio-icono {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 180px;
+}
+
+.inicio-icono img {
+  height: 130px;
+  width: auto;
+  object-fit: contain;
+  transition: filter 200ms ease, transform 200ms ease;
+}
+
+.inicio-icono-label {
+  font-size: 17px;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  transition: text-shadow 200ms ease;
+}
+
+/* Sombra blanca clasica (glow) al pasar el mouse */
+.inicio-icono:hover img,
+.inicio-icono:focus-visible img {
+  filter:
+    drop-shadow(0 0 8px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 22px rgba(255, 255, 255, 0.85));
+  transform: scale(1.08) translateY(-4px);
+}
+
+.inicio-icono:hover .inicio-icono-label {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 1px 4px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 600px) {
+  .marca-nombre { font-size: 32px; }
+  .inicio-iconos { gap: 28px 30px; }
+  .inicio-icono { width: 120px; }
+  .inicio-icono img { height: 90px; }
+  .inicio-icono-label { font-size: 14px; }
+}

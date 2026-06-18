@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StudyQuest - Mis Ramos</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="fondodefault">
+    <div class="calendario-contenedor">
+      <div class="tarjeta panel-registro">
+        <h1>🎈 Mis ramos</h1>
+
+        <label>Agregar ramo</label>
+        <input id="nuevoRamo" type="text" placeholder="ej: Derecho Civil">
+        <button id="agregarRamoBtn">Agregar ramo</button>
+
+        <div id="ramosLista" class="lista-pruebas" style="margin-top:18px;"></div>
+      </div>
+
+      <section class="panel-calendario">
+        <h2 style="color:#fff; margin:0 0 12px 0;">Tus ramos</h2>
+        <div id="globos" class="globos-container"></div>
+      </section>
+    </div>
+
+    <!-- Notepad / overlay -->
+    <div id="notepadOverlay" class="overlay hidden">
+      <div class="overlay-content">
+        <div class="overlay-header">
+          <h2 id="notepadTitulo">Notas</h2>
+          <div id="proximasFechas" class="proximas-fechas"></div>
+          <button id="cerrarNotepad" class="boton-cerrar">×</button>
+        </div>
+        
+        <!-- Tabs de navegación -->
+        <div class="overlay-tabs">
+          <button class="tab-btn activo" data-tab="notas">📝 Notas</button>
+          <button class="tab-btn" data-tab="temario">📚 Temario</button>
+        </div>
+        
+        <div class="overlay-dias">
+          <!-- TAB: NOTAS -->
+          <div id="tab-notas" class="tab-content activo">
+            <div class="overlay-body">
+              <div class="nota-panel">
+                <div class="panel-label">Notas del ramo</div>
+                <div class="notepad-controls">
+                  <input id="colorInput" type="color" value="#000000" title="Color del texto">
+                </div>
+                <textarea id="notepadArea" class="plan-textarea" style="min-height:200px;"></textarea>
+                <button class="boton-estudiar" onclick="abrirPomodoro()">¡A estudiar!</button>
+                <div id="tiempoEstudiadoDisplay" style="margin-top:10px; padding:10px; background:rgba(255,131,207,0.2); border-radius:12px; font-size:13px; color:#bf0068; text-align:center;">Tiempo estudiado: —</div>
+              </div>
+              <div class="evaluaciones-section">
+                <div class="evaluaciones-top">
+                  <h3>Registro de Notas</h3>
+                  <div id="promedioEval" class="promedio-eval">Promedio actual: —</div>
+                </div>
+                <div class="evaluacion-form">
+                  <select id="tipoEval" placeholder="Tipo">
+                    <option value="">Selecciona tipo</option>
+                    <option value="Test">Test</option>
+                    <option value="Certamen">Certamen</option>
+                    <option value="Examen">Examen</option>
+                    <option value="Tarea">Tarea</option>
+                    <option value="Proyecto">Proyecto</option>
+                  </select>
+                  <input id="porcentajeEval" type="number" placeholder="Porcentaje %" min="0" max="100">
+                  <input id="notaEval" type="number" placeholder="Nota" min="0" max="7" step="0.1">
+                  <button id="agregarEval" class="boton-eval">Agregar</button>
+                </div>
+                <div id="listaEval" class="lista-evaluaciones"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- TAB: TEMARIO -->
+          <div id="tab-temario" class="tab-content">
+            <div class="temario-panel">
+              <div class="temario-input-group">
+                <input id="nuevoTema" type="text" placeholder="Agregar tema..." class="input-tema">
+                <button id="agregarTemaBtn" class="boton-agregar-tema">+ Tema</button>
+              </div>
+              <div id="listaTemas" class="lista-temas"></div>
+            </div>
+          </div>
+          
+          <div class="overlay-actions">
+            <button id="guardarNotepad" class="boton-plan">Guardar</button>
+            <button id="abrirCalendarioDesdeRamo" class="boton-plan">Abrir en calendario</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="misramos.js"></script>
+  </body>
+</html>

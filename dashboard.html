@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StudyQuest - Estadísticas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  </head>
+  <body class="fondodefault">
+    <div class="dash-contenedor">
+      <div class="dash-header">
+        <h1 style="margin:0;">📊 Estadísticas</h1>
+        <div class="dash-header-acciones">
+          <button onclick="respaldarDatos()" class="boton-respaldo">⬇️ Respaldar</button>
+          <button onclick="document.getElementById('inputRestaurar').click()" class="boton-respaldo">⬆️ Restaurar</button>
+          <input type="file" id="inputRestaurar" accept=".json,application/json" style="display:none" onchange="restaurarDatos(this)">
+          <button onclick="location.href='index.html'" class="boton-secundario" style="width:auto; margin:0;">
+            ← Volver al inicio
+          </button>
+        </div>
+      </div>
+
+      <!-- Tarjetas resumen -->
+      <div class="dash-cards">
+        <div class="dash-card">
+          <div class="dash-card-label">Promedio general</div>
+          <div id="promedioGeneral" class="dash-card-valor">—</div>
+          <div id="promedioDetalle" class="dash-card-sub"></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-label">Estudiado hoy</div>
+          <div id="tiempoHoy" class="dash-card-valor">—</div>
+          <div class="dash-card-sub">en sesiones de pomodoro</div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-label">Estudiado esta semana</div>
+          <div id="tiempoSemana" class="dash-card-valor">—</div>
+          <div id="tiempoSemanaSub" class="dash-card-sub"></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-label">Temas completados</div>
+          <div id="temasTotal" class="dash-card-valor">—</div>
+          <div id="temasDetalle" class="dash-card-sub"></div>
+        </div>
+      </div>
+
+      <!-- Gráficos -->
+      <div class="dash-graficos">
+        <div class="dash-panel">
+          <h3>Tiempo de estudio por día (últimos 7 días)</h3>
+          <canvas id="graficoTiempoDia"></canvas>
+        </div>
+        <div class="dash-panel">
+          <h3>Temas completados por día (últimos 7 días)</h3>
+          <canvas id="graficoTemasDia"></canvas>
+        </div>
+        <div class="dash-panel">
+          <h3>Tiempo total por ramo</h3>
+          <canvas id="graficoRamos"></canvas>
+        </div>
+        <div class="dash-panel">
+          <h3>Progreso del temario</h3>
+          <canvas id="graficoTemario"></canvas>
+        </div>
+      </div>
+
+      <div id="dashVacio" class="dash-vacio hidden">
+        Aún no hay datos suficientes. Estudia con el pomodoro y completa temas para ver tus estadísticas aquí. 🌱
+      </div>
+    </div>
+
+    <script src="respaldo.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

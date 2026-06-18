@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StudyQuest - Horario</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="horario.css">
+  </head>
+  <body class="fondodefault">
+    <div class="calendario-contenedor">
+      <div class="tarjeta panel-registro">
+        <h1>🗓️ Agregar bloque</h1>
+
+        <label>Ramo</label>
+        <input id="ramoHorario" type="text" placeholder="ej: Derecho Civil" autocomplete="off">
+
+        <label>Día</label>
+        <select id="diaHorario">
+          <option value="0">Lunes</option>
+          <option value="1">Martes</option>
+          <option value="2">Miércoles</option>
+          <option value="3">Jueves</option>
+          <option value="4">Viernes</option>
+          <option value="5">Sábado</option>
+        </select>
+
+        <label>Hora inicio</label>
+        <input id="horaInicio" type="time" value="08:00">
+
+        <label>Hora término</label>
+        <input id="horaFin" type="time" value="09:30">
+
+        <label>Color</label>
+        <input id="colorBloque" type="color" value="#ff38bd">
+
+        <button onclick="agregarBloque()">Agregar al horario</button>
+        <button onclick="location.href='index.html'" class="boton-secundario">
+          ← Volver al inicio
+        </button>
+      </div>
+
+      <section class="panel-calendario">
+        <h2 style="color:#fff; margin:0 0 16px 0;">Tu semana</h2>
+        <div id="grillaHorario" class="grilla-horario"></div>
+      </section>
+    </div>
+
+    <script src="horario.js"></script>
+  </body>
+</html>

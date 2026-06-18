@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StudyQuest - Pomodoro</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="fondodefault">
+    <div class="pomodoro-container">
+      <div class="pomodoro-panel">
+        <h1>🍅 Pomodoro</h1>
+
+        <!-- Cronómetro -->
+        <div class="cronometro-section">
+          <div class="cronometro-display">
+            <div id="tiempoDisplay" class="tiempo-grande">30:00</div>
+            <div id="modoDisplay" class="modo-label">ESTUDIO</div>
+          </div>
+        </div>
+
+        <!-- Tareas -->
+        <div class="tareas-section">
+          <h2>📝 Tareas</h2>
+          <div class="tareas-input-group">
+            <input id="nuevaTarea" type="text" placeholder="Agregar tarea..." class="input-tarea">
+            <button id="agregarTareaBtn" class="boton-agregar-tarea">+</button>
+          </div>
+          <div id="listasTareas" class="lista-tareas"></div>
+        </div>
+
+        <!-- Botones de control -->
+        <div class="pomodoro-controles">
+          <button id="empezarBtn" class="boton-empezar">Empecemos</button>
+          <button id="noPodemosBtn" class="boton-nopuedo">No puedo MÁS</button>
+        </div>
+
+        <!-- Botón para volver -->
+        <div class="pomodoro-footer">
+          <button class="boton-volver" onclick="window.location.href='MisRamos.html'">← Volver</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de confirmación -->
+    <div id="modalConfirm" class="modal hidden">
+      <div class="modal-content">
+        <h3>¿Seguro que no puedes más?</h3>
+        <p>Estabas en el pomodoro...</p>
+        <div class="modal-botones">
+          <button id="volverPomBtn" class="boton-modal primario">Ya sí puedo</button>
+          <button id="salirPomBtn" class="boton-modal secundario">De verdad que no doy más</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="pomodoro.js"></script>
+  </body>
+</html>

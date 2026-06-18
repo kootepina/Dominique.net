@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StudyQuest - Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="fondodefault">
+    <div class="tarjeta">
+      <h1>Calculadora de Notas</h1>
+
+      <label>Test (30%)</label>
+      <input id="test" type="number" placeholder="ej: 4.0" step="0.1">
+
+      <label>Certamen (70%)</label>
+      <input id="certamen" type="number" placeholder="ej: 5.5" step="0.1">
+
+       <button onclick="calcular()">Calcular nota de presentación</button>
+       <h2 id="resultado nota de presentación"></h2>
+
+      <label>Examen final (50% del total)</label>
+      <input id="examen" type="number" placeholder="ej: 3.0" step="0.1">
+
+      <button onclick="calcular()">Calcular nota final</button>
+
+      <h2 id="resultado"></h2>
+      <div id="nubes" style="display:none; font-size: 40px;">
+  🌧️🌧️🌧️
+</div>
+      <audio id="audioTriste" src="Triste.mp3"></audio>
+      <audio id="audioFeliz" src="feliz.mp3"></audio>
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

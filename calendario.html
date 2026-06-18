@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StudyQuest - Calendario</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="fondodefault">
+    <div class="calendario-contenedor">
+      <div class="tarjeta panel-registro">
+        <h1>📅 Registrar prueba</h1>
+
+        <label>Ramo</label>
+        <input id="ramo" type="text" placeholder="ej: Derecho Civil" list="ramosList">
+        <datalist id="ramosList"></datalist>
+
+        <label>Tipo de prueba</label>
+        <select id="tipo">
+          <option value="Test">Test </option>
+          <option value="Certamen">Certamen </option>
+          <option value="Examen">Examen</option>
+          <option value="Repete">Repete</option>
+          <option value="Trabajo">Trabajo</option>
+          <option value="Otro">Otro</option>
+        </select>
+
+        <label>Fecha</label>
+        <input id="fecha" type="date">
+
+        <button onclick="agregarPrueba()">Agregar prueba</button>
+        <button onclick="location.href='index.html'" class="boton-secundario">
+          ← Volver al inicio
+        </button>
+
+        <div id="lista" class="lista-pruebas"></div>
+      </div>
+
+      <section class="panel-calendario">
+        <div class="calendario-header">
+          <button id="prevMes" aria-label="Mes anterior">‹</button>
+          <h2 id="mesAno">Junio 2026</h2>
+          <button id="nextMes" aria-label="Mes siguiente">›</button>
+        </div>
+
+        <div class="dias-semana">
+          <div>Lun</div>
+          <div>Mar</div>
+          <div>Mié</div>
+          <div>Jue</div>
+          <div>Vie</div>
+          <div>Sáb</div>
+          <div>Dom</div>
+        </div>
+
+        <div class="calendario-grid" id="calendario"></div>
+      </section>
+    </div>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="overlay-content">
+        <div class="overlay-header">
+          <h2 id="overlayTitulo">Plan de estudio</h2>
+          <button id="cerrarOverlay" class="boton-cerrar">×</button>
+        </div>
+        <div id="overlayInfo" class="overlay-info"></div>
+        <div id="overlayDias" class="overlay-dias"></div>
+      </div>
+    </div>
+
+    <script src="calendario.js"></script>
+  </body>
+</html>
